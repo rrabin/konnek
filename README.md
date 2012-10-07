@@ -2,7 +2,9 @@
 A <a href="http://raphaeljs.com/">Raphaël— JavaScript</a> Sample Application
 <p/>
 ======
+<h5>
 Project Konnek is all about connections, targeting the study of networks across different domains. Still a work in progress, implementation is very raw (so don't expect too much). Hoping it will eventually evolve into something that can help us more understand network theory and the social DNA that is built around it. This project is a working prototype using Facebook's SDK.
+</h5>
 ======
 <p/>
 <h3>MIT Open Source License</h3>
