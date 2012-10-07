@@ -1,7 +1,7 @@
 <h2>Konnek</h2>
 A <a href="http://raphaeljs.com/">Raphaël— JavaScript</a> Based Application
 <p/>
-<h7><a href="http://www.raffyrabin.com/konnek/">click here for a demo</a></h7>
+<a href="http://www.raffyrabin.com/konnek/"><h8>click here for a demo</h8></a>
 ======
 <h5>
 Project Konnek is all about connections, targeting the study of networks across different domains. Still a work in progress, implementation is very raw (so don't expect too much). Hoping it will eventually evolve into something that can help us more understand network theory and the social DNA that is built around it. This project is a working prototype using Facebook's SDK.
