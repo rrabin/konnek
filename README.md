@@ -1,5 +1,5 @@
 <h2>Konnek</h2>
-A <a href="http://raphaeljs.com/">Raphaël— JavaScript</a> Based Application - <a href="http://www.raffyrabin.com/konnek/">Demo</a>
+A <a href="http://raphaeljs.com/">Raphaël— JavaScript</a> Based Application - <a href="http://www.raffyrabin.com/connekt/">Demo</a>
 <p/>
 ======
 <h5>

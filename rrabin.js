@@ -66,13 +66,14 @@ function createMultipleNodes(_nodeCount) {
 }
 
 function createUserNodes(uid, fbname, imgSrc, color) {
+		var imgSrc = "https://graph.facebook.com/"+uid+"/picture";
 		var n_map = getMap();
 		var n_val = n_map[uid];
 		if (n_val != undefined) {
 			n_val.dblclick(function() { myId = uid; if (n_map["isConnected-"+uid] == "false" || n_map["isConnected-"+uid] == undefined) { FB.api("/"+uid+"/friends?fields=id,name,picture", handleMyFriends); updateMap("isConnected-"+uid, "true"); } else { FB.api("/"+uid+"/friends?fields=id,name,picture", handleRemoveMyFriends); updateMap("isConnected-"+uid, "false"); }  });
 			return n_val;
 		} else {
-			/*
+			
 			var x_axis = Math.floor(Math.random()*(myWidth-100));
 			var y_axis = Math.floor(Math.random()*(myHeight-100));
 			var x_and_y = x_axis+y_axis;
@@ -82,7 +83,7 @@ function createUserNodes(uid, fbname, imgSrc, color) {
 					x_and_y = x_axis+y_axis;
 			}
 			addToMap(x_and_y, x_and_y);
-			*/
+			
 			if (node_x_axis < (myWidth-150)) {
 				node_x_axis = node_x_axis + 75;
 			} else if (node_x_axis >= (myWidth-150)) {
@@ -95,6 +96,7 @@ function createUserNodes(uid, fbname, imgSrc, color) {
 				node_y_axis = 112;
 			} 
 			
+			//var snodevar = r.image(imgSrc, node_x_axis, node_y_axis, 50, 50); //absolute position
 			var snodevar = r.image(imgSrc, node_x_axis, node_y_axis, 50, 50);
 			snodevar.attr({fill: color, stroke: color, "fill-opacity": 0, "stroke-width": 2, cursor: "move"});
 			snodevar.drag(move, dragger, up);
@@ -105,14 +107,16 @@ function createUserNodes(uid, fbname, imgSrc, color) {
 }
 
 function createMainUserNode(uid, fbname, imgSrc) {
-		var n_map = getMap();
+	    var n_map = getMap();
 		var n_val = n_map[uid];
+		var imageSrc = "https://graph.facebook.com/"+uid+"/picture";
 		if (n_val != undefined) {
 			return n_val;
 		} else {
-			//var x_axis = Math.floor(Math.random()*(myWidth-100));
-			//var y_axis = Math.floor(Math.random()*(myHeight-100));
-			var snodevar = r.image(imgSrc, main_x_axis, main_y_axis, 75, 75);
+			var x_axis = Math.floor(Math.random()*(myWidth-100));
+			var y_axis = Math.floor(Math.random()*(myHeight-100));
+			//var snodevar = r.image(imageSrc, main_x_axis, main_y_axis, 75, 75); --random place
+			var snodevar = r.image(imageSrc, main_x_axis, main_y_axis, 75, 75); 
 			var color = Raphael.getColor();
 			snodevar.attr({fill: color, stroke: color, "fill-opacity": 0, "stroke-width": 2, cursor: "move"});
 			snodevar.drag(move, dragger, up);
@@ -185,11 +189,6 @@ function getRandomColor() {
 }  
 
 function handleLogin(response) {
-                //if a user fails to log in...
-                if (!response.session) {
-                    return;
-                }
-				
 				myWidth = getScreenWidth();
 				myHeight = getScreenHeight();
 				dragger = function () {

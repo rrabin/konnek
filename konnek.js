@@ -31,7 +31,7 @@ function handleFriends(response) {
 function handleMyFriends(response) {
 	var friends = response.data;
 	if (friends == undefined) {
-		FB.init({appId:'122313797865669', cookie:true, status:true, xfbml:true }); FB.ui({ method:'send', to:myId, 'name':'Click here to join Konnek', 'display':'popup', 'description':'Kool to Konnek', 'link':'http://www.raffyrabin.com/konnektest'});
+		FB.init({appId:'163289627145227', cookie:true, status:true, xfbml:true }); FB.ui({ method:'send', to:myId, 'name':'Click here to join Konnek', 'display':'popup', 'description':'Kool to Konnek', 'link':'http://www.raffyrabin.com/connekt'});
 		return;
 	}
 	document.getElementById("friendInfoId").innerHTML = "";
@@ -64,7 +64,7 @@ function handleMyFriends(response) {
 function handleRemoveMyFriends(response) {
 		var friends = response.data;
 		if (friends == undefined) {
-			FB.init({appId:'122313797865669', cookie:true, status:true, xfbml:true }); FB.ui({ method:'send', to:myId, 'name':'Click here to join Konnek', 'display':'popup', 'description':'Kool to Konnek', 'link':'http://www.raffyrabin.com/konnektest'});
+			FB.init({appId:'163289627145227', cookie:true, status:true, xfbml:true }); FB.ui({ method:'send', to:myId, 'name':'Click here to join Konnek', 'display':'popup', 'description':'Kool to Konnek', 'link':'http://www.raffyrabin.com/connekt'});
 			return;
 		}
 		var node_map = getMap();

@@ -1,6 +1,7 @@
 function handleMyFriends(response) {
 	var friends = response.data;
 	if (friends == undefined) {
+	    alert("sss");
 		return;
 	}
 	var node_map = getMap();
